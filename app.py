@@ -1,12 +1,12 @@
-from flask import Flask 
+from flask import Flask, redirect
 app = Flask(__name__)
 
 @app.route("/")
 @app.route("/index")
 @app.route("/lab1")
 def start():
-    return """
-"""
+    return redirect ("/menu", code=302)
+
 @app.route("/menu")
 def menu():
     return """
