@@ -3,7 +3,6 @@ app = Flask(__name__)
 
 @app.route("/")
 @app.route("/index")
-@app.route("/lab1")
 def start():
     return redirect ("/menu", code=302)
 
@@ -47,6 +46,15 @@ def lab():
         Относится к категории так называемых микрофреймворков — минималистичных каркасов веб-приложений,
         сознательно предоставляющих лишь самые базовые возможности</h1>
 
+        <a href="/menu">Меню</a>
+                <h1>Реализованные роуты</h1>
+        <ol>
+            <li><a href="/lab1/oak">Дуб</a></li>
+            <li><a href="/lab1/student">Студент</a></li>
+            <li><a href="/lab1/python">Python</a></li>
+            <li><a href="/lab1/bmw">BMW</a></li>
+        </ol>
+
         <footer>
             &copy; Смакотин Степан, ФБИ-13, 3 курс, 2023
         </footer>
@@ -62,6 +70,52 @@ def oak ():
     <body>
         <h1>Дуб</h1>
         <img src="''' + url_for ('static', filename='maxresdefault.jpg') + '''">
+    </body>
+</html>
+
+'''
+
+@app.route("/lab1/student")
+def student ():
+    return '''
+<!doctype html>
+<html>
+<link rel="stylesheet" href="''' + url_for ('static', filename='lab1.css') + '''">
+    <body>
+        <h1>Смакотин Степан Владиславович</h1>
+        <img src="''' + url_for ('static', filename='nstu.png') + '''">
+    </body>
+</html>
+
+'''
+
+@app.route("/lab1/python")
+def python ():
+    return '''
+<!doctype html>
+<html>
+<link rel="stylesheet" href="''' + url_for ('static', filename='lab1.css') + '''">
+    <body>
+        <h1>Язык Python</h1>
+        <p>Python — это скриптовый язык программирования. Он универсален, поэтому подходит для решения разнообразных задач и для многих платформ: начиная с iOS и Android и заканчивая серверными операционными системами. Как и где применяется Python. 
+        Это интерпретируемый язык, а не компилируемый, как C++ или Java. Программа на Python представляет собой обычный текстовый файл.</p>
+        <img src="''' + url_for ('static', filename='python.jpg') + '''">
+    </body>
+</html>
+
+'''
+
+@app.route("/lab1/bmw")
+def bmw ():
+    return '''
+<!doctype html>
+<html>
+<link rel="stylesheet" href="''' + url_for ('static', filename='lab1.css') + '''">
+    <body>
+        <h1>BMW M5 Competition</h1>
+        <p>Доработанная подразделением BMW Motorsport версия автомобиля BMW пятой серии. Первое поколение было представлено в 1986 году. Последующие поколения M5 сменялись совместно с каждым поколением автомобилей пятой серии, включающей E34, E39, E60/61, F10. 
+        С началом производства модели G30, после поступления первых заказов, с марта 2018 года началось также производство её M-версии.</p>
+        <img src="''' + url_for ('static', filename='bmw.jpeg') + '''">
     </body>
 </html>
 

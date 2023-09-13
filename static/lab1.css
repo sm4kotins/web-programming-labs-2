@@ -3,12 +3,17 @@ body {
 }
 
 img {
-    height: auto;
-    width: auto;
+    height: 50%;
+    width: 50%;
 }
 
 h1 {
-    color:brown;
+    color:chocolate;
     font-size: 48px;
     
+}
+
+p {
+    width: 760px;
+    text-align: justify;
 }
