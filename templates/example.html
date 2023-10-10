@@ -29,6 +29,12 @@
             {% endfor %}
         </ul>
 
+        <ul>
+            {% for f in books %}
+            <li>{{f.author}} -- {{f.name}} -- {{f.genre}} -- {{f.pages}} </li>
+            {% endfor %}
+        </ul>
+
     </main>
 
     <footer>
