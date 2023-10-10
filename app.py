@@ -30,7 +30,7 @@ def menu():
 
 @app.route("/lab1")
 def lab():
-    return  """
+    return  """ 
 <!doctype html>
 <html>
     <head>
@@ -124,4 +124,7 @@ def bmw ():
 @app.route('/lab2/example')
 def example ():
     name = 'Смакотин Степан'
-    return render_template('example.html', name=name)
+    nomer_labi='2'
+    group='ФБИ 13'
+    course='3'
+    return render_template('example.html', name=name, nomer_labi=nomer_labi, group=group, course=course)
