@@ -123,8 +123,12 @@ def bmw ():
 
 @app.route('/lab2/example')
 def example ():
-    name = 'Смакотин Степан'
-    nomer_labi='2'
-    group='ФБИ 13'
-    course='3'
-    return render_template('example.html', name=name, nomer_labi=nomer_labi, group=group, course=course)
+    name, number, group, course = 'Егор Панченко', 2, 'ФБИ-13', '3 курс'
+    fruits = [
+        {'name': 'яблоки', 'price': 100},
+        {'name': 'груши', 'price': 120},
+        {'name': 'апельсины', 'price': 80},
+        {'name': 'мандарины', 'price': 95}, 
+        {'name': 'манго', 'price': 321},
+    ]
+    return render_template('example.html', name=name, number=number, group=group, course=course, fruits=fruits)
