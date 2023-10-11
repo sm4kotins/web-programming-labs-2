@@ -143,3 +143,7 @@ def example ():
         { 'author': 'Фрэнсис Скотт Фицджеральд', 'name': 'Великий Гэтсби', 'genre': 'роман', 'pages': '256'},
     ]
     return render_template('example.html', name=name, number=number, group=group, course=course, fruits=fruits, books=books)
+
+@app.route('/lab2/')
+def lab2 ():
+    return render_template('lab2.html')
