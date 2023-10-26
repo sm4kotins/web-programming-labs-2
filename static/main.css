@@ -28,3 +28,28 @@ footer {
 .error {
     color: red;
 }
+
+.railway-ticket-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 10px;
+}
+p {
+    margin-bottom: 5px;
+}
+
+strong {
+    font-weight: bold;
+}
