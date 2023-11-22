@@ -69,6 +69,41 @@ strong {
     margin-top: 10px;
 }
 
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login-label-input {
+    display: block;
+    margin: 10px 0;
+}
+
+.login-button {
+    background-color: #0072c4;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #00528c;
+}
+
+a.fridge-text {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer; 
+}
+
 .fridge-button{
     background-color: #0091ea;
     color: #fff;
@@ -111,4 +146,27 @@ strong {
     margin: 20px 0;
     text-align: center;
     color: #fff;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.grainform {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.grain-select-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
