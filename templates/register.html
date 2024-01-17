@@ -1,78 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+{% extends "base.html" %}
 
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+{% block lab %}Лабораторная работа 5{% endblock %}
 
-        h1 {
-            text-align: center;
-        }
+{% block main %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .registration-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        margin-bottom: 5px;
+    }
+    input {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+</style>
 
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            margin-top: 5px;
-        }
-    </style>
-</head>
 <body>
-    <form method="POST">
+    <div class="registration-container">
         <h1>Страница регистрации</h1>
-        <div>
-            <label for="username">Логин</label>
-            <input type="text" name="username" placeholder="Введите логин">
-        </div>
-        <div>
-            <label for="password">Пароль</label>
-            <input type="password" name="password" placeholder="Введите пароль">
-        </div>
-        <button type="submit">Зарегистрироваться</button>
-        <!-- Реализуйте вывод ошибок. Например: -->
-        <div class="error">{{errors}}</div>
-    </form>
+
+        {% if errors %}
+            {% for error in errors %}
+                <div><b>{{ error }}</b></div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="/lab5/register">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" name="username" required>
+            
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" required>
+            
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+
+        <a href="/lab5">
+            <button>Вернуться назад</button>
+        </a>
+    </div>
 </body>
-</html>
+{% endblock %}
